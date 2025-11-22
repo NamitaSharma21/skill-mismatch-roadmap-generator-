@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Mismatch Roadmap Generator</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        {% if session.get('user') %}
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('signup') }}">Signup</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>Skill Mismatch Roadmap Generator</h1>
+      <p>Identify your skill gaps, get personalized roadmaps, and grow your career with confidence.</p>
+      <button onclick="generateRoadmap()">Generate My Roadmap 🚀</button>
+    </div>
+  </header>
+
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>🎯 Personalized Roadmap</h3>
+        <p>Get a learning path tailored to your skill level & career goals.</p>
+      </div>
+      <div class="feature">
+        <h3>🧠 AI Performance Testing</h3>
+        <p>AI analyzes your learning progress and suggests improvements.</p>
+      </div>
+      <div class="feature">
+        <h3>🔍 Skill Gap Analysis</h3>
+        <p>Find out exactly which skills you lack and how to fix them.</p>
+      </div>
+      <div class="feature">
+        <h3>🤖 AI Chatbot Help</h3>
+        <p>Ask the AI chatbot anything related to your career or learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional: Signup/Login forms if needed -->
+  <!-- Example: Signup -->
+  <!--
+  <form action="{{ url_for('signup') }}" method="POST" class="form">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Signup</button>
+  </form>
+  -->
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
