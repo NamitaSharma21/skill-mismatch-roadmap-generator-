@@ -2,7 +2,7 @@
 # Imports
 # ---------------------------
 import streamlit as st
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, request, redirect, url_for, jsonify
 import mysql.connector
 from dotenv import load_dotenv
 import os
@@ -170,4 +170,5 @@ def chat():
 # ---------------------------
 if __name__ == "__main__":
     app.run(debug=True)
+
 
